@@ -1,3 +1,9 @@
+# Task
+## Create entities
+http://127.0.0.1:4000/products/new
+## Get index JSON
+http://127.0.0.1:4000/products
+
 # Foods
 
 To start your Phoenix server:
