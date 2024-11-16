@@ -6,13 +6,9 @@ defmodule FoodsWeb.ProductController do
 
 
   def index(conn, _params) do
-    products = Enum.map(
-      Food.list_products(),
-      fn x -> %{name: x.name, prots: x.prots, fats: x.fats, hydro: x.hydro} end
-    )
     conn
     |> put_resp_content_type("application/json")
-    |> send_resp(200, Jason.encode!(products))
+    |> send_resp(200, Jason.encode!(Food.list_json()))
   end
 
   def new(conn, _params) do

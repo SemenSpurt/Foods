@@ -8,6 +8,18 @@ defmodule Foods.Food do
 
   alias Foods.Food.Product
 
+
+  def list_json do
+    meta = [
+      :__struct__,
+      :__meta__,
+      :inserted_at,
+      :updated_at
+    ]
+    Repo.all(Product)
+    |> Enum.map(&Map.drop(&1, meta))
+  end
+
   @doc """
   Returns the list of products.
 
